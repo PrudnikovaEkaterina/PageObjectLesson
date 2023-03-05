@@ -6,8 +6,6 @@ import pages.StudentRegistrationFormPage;
 
 public class TestBase {
 
-    StudentRegistrationFormPage studentRegistrationFormPage=new StudentRegistrationFormPage();
-
     @BeforeAll
     static void beforeAll() {
         Configuration.baseUrl = "https://demoqa.com";
