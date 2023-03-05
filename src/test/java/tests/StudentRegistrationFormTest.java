@@ -1,13 +1,9 @@
 package tests;
 
-import com.codeborne.selenide.Condition;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
 import java.io.File;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$x;
 
 public class StudentRegistrationFormTest extends TestBase {
 
@@ -26,7 +22,7 @@ public class StudentRegistrationFormTest extends TestBase {
                 dayOfBirth = "15",
                 monthOfBirth = "February",
                 yearOfBirth = "1989",
-                charOAutoComplete = "e",
+                AutoCompleteInput = "e",
                 subject = "English",
                 hobby = "Reading",
                 address = "Ростов-на-Дону",
@@ -41,7 +37,7 @@ public class StudentRegistrationFormTest extends TestBase {
                 .chooseGender(gender)
                 .setPhone(phoneNumber)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
-                .chooseSubjects(charOAutoComplete, subject)
+                .chooseSubjects(AutoCompleteInput, subject)
                 .chooseHobbies(hobby)
                 .uploadPicture(file)
                 .setCurrentAdress(address)

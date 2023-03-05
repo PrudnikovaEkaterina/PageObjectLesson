@@ -3,16 +3,15 @@ package pages.components;
 import com.codeborne.selenide.SelenideElement;
 
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class DatePicker {
-    private SelenideElement
-            monthSelect = $x("//select[@class='react-datepicker__month-select']"),
-            yearSelect = $x("//select[@class='react-datepicker__year-select']");
+    private final SelenideElement
+            MONTH_SELECT = $x("//select[@class='react-datepicker__month-select']"),
+            YEAR_SELECT = $x("//select[@class='react-datepicker__year-select']");
 
     public void setDay(String day, String month, String year) {
-        monthSelect.selectOption(month);
-        yearSelect.selectOption(year);
+        MONTH_SELECT.selectOption(month);
+        YEAR_SELECT.selectOption(year);
         $x("//div[@class='react-datepicker__month-container']//descendant::div[text()=" + day + "]").click();
     }
 

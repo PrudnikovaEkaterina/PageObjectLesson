@@ -18,7 +18,6 @@ public class StudentRegistrationFormPage {
             FIRSTNAMEINPUT = $("#firstName"),
             LASTNAMEINPUT = $("#lastName"),
             EMAILINPUT = $("#userEmail"),
-            GENDERMALERADIO = $x("//label[text()='Male']"),
             PHONEINPUT = $x("//input[@id='userNumber']"),
             DATEOFBIRTHINPUT = $x("//input[@id='dateOfBirthInput']"),
             SUBJECTSAUTOCOMPLETE = $x("//input[@id='subjectsInput']"),
@@ -105,9 +104,8 @@ public class StudentRegistrationFormPage {
         return this;
     }
 
-    public StudentRegistrationFormPage submitButtonClick() {
+    public void submitButtonClick() {
         SUBMITBUTTON.click();
-        return this;
     }
 
     public StudentRegistrationFormPage verifyModalAppears() {
