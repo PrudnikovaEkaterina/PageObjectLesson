@@ -6,6 +6,7 @@ import pages.components.RegistrationResultsModal;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class StudentRegistrationFormPage {
@@ -71,9 +72,10 @@ public class StudentRegistrationFormPage {
         return this;
     }
 
-    public StudentRegistrationFormPage chooseSubjects(String value, String subject) {
-        SUBJECTSAUTOCOMPLETE.setValue(value);
-        $x("//div[text()='" + subject + "']").click();
+    public StudentRegistrationFormPage chooseSubjects(String subject) {
+        SUBJECTSAUTOCOMPLETE.setValue(subject);
+        sleep(1000);
+        $(".subjects-auto-complete__menu-list").$(byText(subject)).click();
         return this;
     }
 
