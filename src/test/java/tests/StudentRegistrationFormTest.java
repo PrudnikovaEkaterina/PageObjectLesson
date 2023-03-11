@@ -1,20 +1,25 @@
 package tests;
 
+import com.github.javafaker.Faker;
 import dataForTest.Student;
 import dataForTest.StudentGenerationWithFaker;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class StudentRegistrationFormTest extends TestBase {
 
     StudentRegistrationFormPage registrationFormPage = new StudentRegistrationFormPage();
-    Student student = StudentGenerationWithFaker.studentGeneration();
-    File file = new File("src/test/resources/ljv.png");
+
 
     @Test
     public void registrationFormTest() {
+        Student student = StudentGenerationWithFaker.generationNewStudentOnlyFaker();
+        File file = new File("src/test/resources/ljv.png");
 
         registrationFormPage.openPage()
                 .removeTheBanner()

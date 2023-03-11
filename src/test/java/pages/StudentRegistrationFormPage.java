@@ -67,14 +67,12 @@ public class StudentRegistrationFormPage {
 
     public StudentRegistrationFormPage setDateOfBirth(String day, String month, String year) {
         DATEOFBIRTHINPUT.click();
-        sleep(2000);
         datePicker.setDay(day, month, year);
         return this;
     }
 
     public StudentRegistrationFormPage chooseSubjects(String subject) {
         SUBJECTSAUTOCOMPLETE.setValue(subject);
-        sleep(1000);
         $(".subjects-auto-complete__menu-list").$(byText(subject)).click();
         return this;
     }
